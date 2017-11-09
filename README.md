@@ -15,6 +15,7 @@ Visualiza os containers que estão em execução, junto com os container parados
 
 ```bash
 docker ps -a
+# -a -> Retorna os containers que foram parados
 ```
 
 Compila uma nova imagem de container baseada em um Dockerfile
@@ -22,12 +23,17 @@ Compila uma nova imagem de container baseada em um Dockerfile
 ```bash
 cd <diretório com o dockerfile>
 docker build -t <image-name> .
+# -t ?
 ```
 
 Executa uma imagem 
 
 ```bash
 docker run --rm -it -d -p <porta>:80 --name <nome do container> <nome da imagem>
+# --rm ?
+# -it ?
+# - p -> Especifica a porta em que a aplicação será rodada
+# --name -> Da um nome ao container
 ```
 
 Para a execução de um container
@@ -46,10 +52,26 @@ Remove todos os containers parados:
 
 ```bash
 docker ps -q |xargs docker rm
+# -q ?
 ```
 
 Remove todas as imagens que não estão sendo usadas:
 
 ```bash
 docker images -q |xargs docker rmi
+# -q ?
 ```
+Executando containers pelo docker-compose
+
+```bash
+cd <diretorio onde contém o arquivo docker-compose.yml>
+docker-compose up -d
+# -d usado para rodar em background
+```
+
+Parando e removendo os containers pelo docker-compose
+
+```bash
+docker-compose down
+```
+
