@@ -27,3 +27,10 @@ Comandos para executar os containers com as imagens das APIs
 docker run --rm -it -d -p 2001:80 --name calculadora.api taigobrasil/calculadora.api
 docker run --rm -it -d -p 2002:80 --name cep.api taigobrasil/cep.api
 ```
+
+## Enviando as APIs para o Docker Hub
+
+```bash
+docker push taigobrasil/calculadora.api
+docker push taigobrasil/cep.api
+```
