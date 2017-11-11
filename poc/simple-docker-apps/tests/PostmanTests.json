@@ -1,0 +1,166 @@
+{
+	"info": {
+		"name": "Docker APIs Tests",
+		"_postman_id": "f9efdaa6-d039-ae2b-0cf7-de87b796baa2",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "cep.api",
+			"description": "",
+			"item": [
+				{
+					"name": "GET Estados",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:2002/api/estados",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2002",
+							"path": [
+								"api",
+								"estados"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "POST Enderecos (Exemplo 1)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"cep\": \"03531070\",\n\t\"bairro\": \"Vila Nova Savoia\",\n\t\"rua\": \"Rua Felício Antonio Pepe\",\n\t\"numero\": \"1\",\n\t\"uf\": \"SP\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:2002/api/enderecos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2002",
+							"path": [
+								"api",
+								"enderecos"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "POST Enderecos (Exemplo 2)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"cep\": \"03517000\",\n\t\"bairro\": \"Vila Matilde\",\n\t\"rua\": \"Rua Antonieta de Morais\",\n\t\"numero\": \"241\",\n\t\"uf\": \"RJ\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:2002/api/enderecos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2002",
+							"path": [
+								"api",
+								"enderecos"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GET Enderecos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:2002/api/enderecos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2002",
+							"path": [
+								"api",
+								"enderecos"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GET Enderecos (?cep=03531070)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:2002/api/enderecos/03531070",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2002",
+							"path": [
+								"api",
+								"enderecos",
+								"03531070"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GET Enderecos (?cep=03517000)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:2002/api/enderecos/03517000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2002",
+							"path": [
+								"api",
+								"enderecos",
+								"03517000"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

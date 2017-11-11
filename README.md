@@ -65,13 +65,26 @@ Executando containers pelo docker-compose
 
 ```bash
 cd <diretorio onde contém o arquivo docker-compose.yml>
-docker-compose up -d
+docker-compose up -d --build
 # -d usado para rodar em background
+# -- buiild -> compila novas versões das imagens antes de executá-las
 ```
 
 Parando e removendo os containers pelo docker-compose
 
 ```bash
 docker-compose down
+```
+
+Listar os volumes criados
+
+```bash
+docker volume ls
+```
+
+Remover todos os volumes não utilizados
+
+```bash
+docker volume prune
 ```
 

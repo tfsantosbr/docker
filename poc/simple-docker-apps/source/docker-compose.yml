@@ -5,12 +5,18 @@ services:
   # APIS
 
   calculadora.api:
+    build:
+      context: ./calculadora.api
+      dockerfile: ./Dockerfile
     image: taigobrasil/calculadora.api
     ports:
       - "2001:80"
 
   cep.api:
-    image: taigobrasil/calculadora.api
+    build:
+      context: ./cep.api
+      dockerfile: ./Dockerfile
+    image: taigobrasil/cep.api
     ports:
       - "2002:80"
     depends_on:
@@ -22,8 +28,10 @@ services:
     image: postgres
     restart: always
     environment:
-      POSTGRES_USER: test
-      POSTGRES_PASSWORD: test
+      POSTGRES_USER: developer
+      POSTGRES_PASSWORD: developer
+    ports:
+      - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
 

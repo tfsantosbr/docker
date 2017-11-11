@@ -26,10 +26,8 @@ namespace cep.api
         {
             services.AddMvc();
 
-            var sqlConnectionString = Configuration.GetConnectionString("DataAccessPostgreSqlProvider");
- 
             services.AddDbContext<CepDbContext>(options =>
-                options.UseNpgsql(sqlConnectionString)
+                options.UseNpgsql(Configuration.GetConnectionString("CepDbConnection"))
             );
         }
 
@@ -43,6 +41,7 @@ namespace cep.api
             app.UseMvc();
 
             cepContext.Database.Migrate();
+            cepContext.SeedData();
         }
     }
 }
