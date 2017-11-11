@@ -34,3 +34,9 @@ docker run --rm -it -d -p 2002:80 --name cep.api taigobrasil/cep.api
 docker push taigobrasil/calculadora.api
 docker push taigobrasil/cep.api
 ```
+
+## Executando o RabbitMQ
+
+```bash
+docker run -d -h rabbit --name rabbit -p "4369:4369" -p "5672:5672" -p "15672:15672" -p "25672:25672" -p "35197:35197" -e "RABBITMQ_USE_LONGNAME=true" -e "RABBITMQ_LOGS=/var/log/rabbitmq/rabbit.log" -v /data:/var/lib/rabbitmq -v /data/logs:/var/log/rabbitmq rabbitmq:management
+```

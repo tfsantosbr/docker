@@ -9,23 +9,29 @@ services:
       context: ./calculadora.api
       dockerfile: ./Dockerfile
     image: taigobrasil/calculadora.api
+    container_name: calculadora.api
     ports:
       - "2001:80"
+    depends_on:
+      - rabbitmq
 
   cep.api:
     build:
       context: ./cep.api
       dockerfile: ./Dockerfile
     image: taigobrasil/cep.api
+    container_name: cep.api
     ports:
       - "2002:80"
     depends_on:
       - cep.db
+      - rabbitmq
 
   # DATABASES
 
   cep.db:
     image: postgres
+    container_name: cep.db
     restart: always
     environment:
       POSTGRES_USER: developer
@@ -35,5 +41,22 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
 
+  # RABBITMQ
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    hostname: rabbitmq
+    environment:
+      RABBITMQ_USE_LONGNAME: 'true'
+      RABBITMQ_DEFAULT_USER: developer
+      RABBITMQ_DEFAULT_PASS: developer
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    volumes:
+      - rabbitdata:/var/lib/rabbitmq
+
 volumes:
   pgdata:
+  rabbitdata:
