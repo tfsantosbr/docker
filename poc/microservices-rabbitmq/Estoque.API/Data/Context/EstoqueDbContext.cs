@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Estoque.API.Data.Entities;
+﻿using Estoque.API.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Estoque.API.Data.Context
