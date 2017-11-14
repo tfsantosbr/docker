@@ -1,21 +1,23 @@
 {
 	"info": {
-		"name": "Docker APIs Tests",
-		"_postman_id": "f9efdaa6-d039-ae2b-0cf7-de87b796baa2",
+		"name": "Docker Simple APIs Tests",
+		"_postman_id": "b9222529-7db6-dfca-6d13-b0e78bad15a3",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "cep.api",
-			"description": "",
 			"item": [
 				{
 					"name": "GET Estados",
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:2002/api/estados",
 							"protocol": "http",
@@ -27,8 +29,7 @@
 								"api",
 								"estados"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -57,8 +58,7 @@
 								"api",
 								"enderecos"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -87,8 +87,7 @@
 								"api",
 								"enderecos"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -97,7 +96,10 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:2002/api/enderecos",
 							"protocol": "http",
@@ -109,8 +111,7 @@
 								"api",
 								"enderecos"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -119,7 +120,10 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:2002/api/enderecos/03531070",
 							"protocol": "http",
@@ -132,8 +136,7 @@
 								"enderecos",
 								"03531070"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -142,7 +145,10 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:2002/api/enderecos/03517000",
 							"protocol": "http",
@@ -154,6 +160,61 @@
 								"api",
 								"enderecos",
 								"03517000"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "calculadora.api",
+			"description": "",
+			"item": [
+				{
+					"name": "Somar 1 + 1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:2001/api/calculos/somar/1/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2001",
+							"path": [
+								"api",
+								"calculos",
+								"somar",
+								"1",
+								"1"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Subtrair 1 + 1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:2001/api/calculos/subtrair/1/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2001",
+							"path": [
+								"api",
+								"calculos",
+								"subtrair",
+								"1",
+								"1"
 							]
 						},
 						"description": ""
