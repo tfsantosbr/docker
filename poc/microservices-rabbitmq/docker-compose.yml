@@ -73,7 +73,6 @@ services:
     container_name: rabbitmq
     hostname: rabbitmq
     environment:
-      RABBITMQ_USE_LONGNAME: 'true'
       RABBITMQ_DEFAULT_USER: developer
       RABBITMQ_DEFAULT_PASS: developer
     ports:

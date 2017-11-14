@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
@@ -31,12 +32,16 @@ namespace Estoque.API
             );
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, EstoqueDbContext estoqueDbContext)
+        public void Configure(
+            IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, EstoqueDbContext estoqueDbContext)
         {
             if (env.IsDevelopment())
                 app.UseDeveloperExceptionPage();
 
             app.UseMvc();
+
+            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+            loggerFactory.AddDebug();
 
             estoqueDbContext.Database.Migrate();
             estoqueDbContext.SeedData();

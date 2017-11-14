@@ -3,9 +3,11 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Pedidos.API.Data.Context;
+using RabbitMQ.Client;
 
 namespace Pedidos.API
 {
@@ -31,12 +33,16 @@ namespace Pedidos.API
             );
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, PedidosDbContext pedidosDbContext)
+        public void Configure(
+            IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, PedidosDbContext pedidosDbContext)
         {
             if (env.IsDevelopment())
                 app.UseDeveloperExceptionPage();
 
             app.UseMvc();
+
+            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+            loggerFactory.AddDebug();
 
             pedidosDbContext.Database.Migrate();
             pedidosDbContext.SeedData();
