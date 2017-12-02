@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2008
+VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{4DA82B8A-EDDE-488C-A055-43FAC19AD310}"
 EndProject
@@ -17,9 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Estoque.API", "Estoque.API\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - Services", "01 - Services", "{5417EBC8-A18A-490D-BBA4-06B03409A55E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 - CrossCutting", "02 - CrossCutting", "{3376799C-1D29-4E0F-ADB9-B71487B64885}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrossCutting.Common", "..\CrossCutting.Common\CrossCutting.Common.csproj", "{22D76AE7-0C17-406A-8024-F2F8CDD3E913}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{1AEC81D0-1F01-4C84-A2B3-102887681C81}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,10 +37,6 @@ Global
 		{1B6F3AD1-5C49-4FED-B471-DB4874BDEAB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B6F3AD1-5C49-4FED-B471-DB4874BDEAB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B6F3AD1-5C49-4FED-B471-DB4874BDEAB7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{22D76AE7-0C17-406A-8024-F2F8CDD3E913}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{22D76AE7-0C17-406A-8024-F2F8CDD3E913}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{22D76AE7-0C17-406A-8024-F2F8CDD3E913}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{22D76AE7-0C17-406A-8024-F2F8CDD3E913}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,8 +47,6 @@ Global
 		{7EF2D598-E0D7-451A-87DB-6B4D21CD52C0} = {5417EBC8-A18A-490D-BBA4-06B03409A55E}
 		{1B6F3AD1-5C49-4FED-B471-DB4874BDEAB7} = {7EF2D598-E0D7-451A-87DB-6B4D21CD52C0}
 		{5417EBC8-A18A-490D-BBA4-06B03409A55E} = {36B90D85-69EA-44BD-B8E9-A545079E1698}
-		{3376799C-1D29-4E0F-ADB9-B71487B64885} = {36B90D85-69EA-44BD-B8E9-A545079E1698}
-		{22D76AE7-0C17-406A-8024-F2F8CDD3E913} = {3376799C-1D29-4E0F-ADB9-B71487B64885}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {40668FE4-536D-459C-B8AC-C80E4D5AF2AB}

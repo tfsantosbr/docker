@@ -4,85 +4,62 @@ services:
   
   # ESTOQUE
   
-  # -- api
+  # Estoque.Api
   
   estoque.api:
     image: estoque.api
+    container_name: estoque.api    
+    ports:
+      - "2001:80"
     build:
       context: ./Estoque.API
       dockerfile: ./Dockerfile
-
-    container_name: estoque.api
-    ports:
-      - "2001:80"
     depends_on:
       - estoque.db
-      - rabbitmq
-
   
-  # -- database
+  # Estoque.Db
 
   estoque.db:
     image: postgres
     container_name: estoque.db
+    ports:
+      - "3001:5432"
     restart: always
     environment:
       POSTGRES_USER: developer
       POSTGRES_PASSWORD: developer
-    ports:
-      - "3001:5432"
     volumes:
       - estoque.db.data:/var/lib/postgresql/data
 
   # PEDIDOS
   
-  # -- api
+  # Pedidos.Api
   
   pedidos.api:
     image: pedidos.api
-    build:
-      context: ./Pedidos.API
-      dockerfile: ./Dockerfile
-
     container_name: pedidos.api
     ports:
       - "2002:80"
+    build:
+      context: ./Pedidos.API
+      dockerfile: ./Dockerfile
     depends_on:
       - pedidos.db
-      - rabbitmq
-
   
-  # -- database
+  # Pedidos.Db
 
   pedidos.db:
     image: postgres
     container_name: pedidos.db
+    ports:
+      - "3002:5432"
     restart: always
     environment:
       POSTGRES_USER: developer
       POSTGRES_PASSWORD: developer
-    ports:
-      - "3002:5432"
     volumes:
       - pedidos.db.data:/var/lib/postgresql/data
-
-  # RABBITMQ
-
-  rabbitmq:
-    image: rabbitmq:3-management
-    container_name: rabbitmq
-    hostname: rabbitmq
-    environment:
-      RABBITMQ_DEFAULT_USER: developer
-      RABBITMQ_DEFAULT_PASS: developer
-    ports:
-      - "15672:15672"
-      - "5672:5672"
-    volumes:
-      - rabbitdata:/var/lib/rabbitmq
 
 volumes:
   estoque.db.data:
   pedidos.db.data:
-  rabbitdata:
-

@@ -7,7 +7,6 @@ using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Pedidos.API.Data.Context;
-using RabbitMQ.Client;
 
 namespace Pedidos.API
 {

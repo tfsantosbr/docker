@@ -1,0 +1,91 @@
+{
+	"info": {
+		"name": "Loja Docker Tests",
+		"_postman_id": "e2c85f37-e937-793f-ac9c-3e650bcb7e4f",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "pedidos.api",
+			"item": [
+				{
+					"name": "GET Pedidos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:2002/api/pedidos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2002",
+							"path": [
+								"api",
+								"pedidos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Pedidos",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"cliente\": \"Tiago\",\n\t\"itens\": [\n\t\t{\n\t\t\t\"produtoId\": \"5b681648-348e-41b7-a565-3ddc591468f0\",\n\t\t\t\"quantidade\": \"1\",\n\t\t\t\"valor\": \"300.00\"\n\t\t}\n\t]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:2002/api/pedidos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2002",
+							"path": [
+								"api",
+								"pedidos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "produtos.api",
+			"item": [
+				{
+					"name": "GET Produtos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:2001/api/produtos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2001",
+							"path": [
+								"api",
+								"produtos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
