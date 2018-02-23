@@ -51,9 +51,8 @@ docker rm <container ID ou container name>
 Remove todos os containers parados:
 
 ```bash
-docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q) #bash
-docker ps -q |xargs docker rm
-# -q ?
+docker stop $(docker ps -a -q)
+docker rm $(docker ps -a -q)
 ```
 
 Remove todas as imagens que não estão sendo usadas:
