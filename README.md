@@ -58,7 +58,7 @@ docker rm $(docker ps -a -q)
 Remove todas as imagens que não estão sendo usadas:
 
 ```bash
-docker images -q |xargs docker rmi
+docker images -q |xargs docker rmi -f
 # -q ?
 ```
 Executando containers pelo docker-compose
