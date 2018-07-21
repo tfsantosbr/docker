@@ -10,9 +10,9 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/Estoque.API/bin/Debug/netcoreapp2.0/Estoque.API.dll",
+            "program": "${workspaceFolder}/poc/simple-docker-apps/source/calculadora.api/bin/Debug/netcoreapp2.0/calculadora.api.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/Estoque.API",
+            "cwd": "${workspaceFolder}/poc/simple-docker-apps/source/calculadora.api",
             "stopAtEntry": false,
             "internalConsoleOptions": "openOnSessionStart",
             "launchBrowser": {
@@ -42,5 +42,5 @@
             "request": "attach",
             "processId": "${command:pickProcess}"
         }
-    ]
+    ,]
 }
