@@ -39,3 +39,6 @@ docker build -t <image-name> .
 # Executa uma imagem 
 docker run --rm -it -d -p <porta>:80 --name <nome do container> <nome da imagem>
 ```
+
+## Dicas
+- Para acessar um container através de outro container ao invés utiliza-se `host.docker.internal` ao invés de `localhost`
